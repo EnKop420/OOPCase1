@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPCase1.Code
 {
-    public class Enrollment
+    internal class Enrollment
     {
         public Student StudentInfo { get; set; }
         public Course CourseInfo { get; set; }
