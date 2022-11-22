@@ -4,7 +4,7 @@ Student ozan = new(3, "Ozan", "Korkmaz", new DateOnly(1999, 12, 4));
 Student camilla = new(4, "Camilla", "Kløjgaard", new DateOnly(1890, 4, 4));
 Student dennis = new(5, "Dennis", "Paaske", new DateOnly(1980, 3, 4));
 
-Teacher niels = new("Tortur", "Niels", "Olesen", new DateOnly(1971, 1, 23));
+Teacher niels = new("Lærer", "Niels", "Olesen", new DateOnly(1971, 1, 23));
 
 Course grundlæggende = new("Grundelæggende Programmering", niels);
 Course studieteknik = new("Studieteknik", niels );
