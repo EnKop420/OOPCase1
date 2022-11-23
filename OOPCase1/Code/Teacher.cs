@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace OOPCase1.Code
 {
+    //Hello
     internal sealed class Teacher : Person
     {
         public string Department { get; set; }
