@@ -11,9 +11,10 @@ namespace OOPCase1.Code
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateOnly DateOfBirth { get; set; }
-        public int Age { get; set; }
+        public static int Age { get; set; }
 
-        public static int GetAge(DateOnly DateOfBirth)
+        internal abstract List<string?> getAllCourses(Enrollment enrollments);
+        public static int ConvertToAge(DateOnly DateOfBirth)
         {
             DateTime today = DateTime.Today;
             int age = today.Year - DateOfBirth.Year;
@@ -24,7 +25,16 @@ namespace OOPCase1.Code
             FirstName = firstName;
             LastName = lastName;
             DateOfBirth = dateofbirth;
-            Age = GetAge(DateOfBirth);
+            Age = ConvertToAge(DateOfBirth);
+        }
+        public static int GetAge()
+        {
+            return Age;
+        }
+
+        internal virtual string? getDateOfBirth()
+        {
+            return "General Kenobi";
         }
     }
 }

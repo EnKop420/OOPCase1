@@ -13,5 +13,14 @@ namespace OOPCase1.Code
         {
             StudentId = studentid;
         }
+        internal override List<string?> getAllCourses(Enrollment teacherCourses)
+        {
+            List<string?> result = new List<string?>();
+            foreach (var item in teacherCourses.enrollment)
+            {
+                result.Add(item.CourseInfo.CourseName);
+            }
+            return result;
+        }
     }
 }

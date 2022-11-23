@@ -10,11 +10,16 @@ namespace OOPCase1.Code
     {
         public Student StudentInfo { get; set; }
         public Course CourseInfo { get; set; }
+        public List<Enrollment> enrollment { get; set; }
 
         public Enrollment(Student studentinfo, Course courseinfo)
         {
             StudentInfo = studentinfo;
             CourseInfo = courseinfo;
+        }
+        public Enrollment()
+        {
+
         }
     }
 }

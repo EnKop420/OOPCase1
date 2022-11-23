@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace OOPCase1.Code
 {
-    //Hello
     internal sealed class Teacher : Person
     {
         public string Department { get; set; }
@@ -15,6 +14,24 @@ namespace OOPCase1.Code
         public Teacher(string department, string firstname, string lastname, DateOnly dateofbirth) : base(firstname, lastname, dateofbirth)
         {
             Department = department;
+        }
+        
+        public string? getDepartment(Enrollment department)
+        {
+            return department.CourseInfo.TeacherInfo.Department;
+        }
+        internal override List<string?> getAllCourses(Enrollment teacherCourses)
+        {
+            List<string?> result = new List<string?>();
+            foreach (var item in teacherCourses.enrollment)
+            {
+                result.Add(item.CourseInfo.CourseName);
+            }
+            return result;
+        }
+        internal override string? getDateOfBirth()
+        {
+            return "Hello There";
         }
     }
 }
