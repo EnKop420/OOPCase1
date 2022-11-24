@@ -25,5 +25,9 @@ namespace OOPCase1.Code
         {
             return string.Compare(other.StudentInfo.LastName,StudentInfo.LastName);
         }
+        public Enrollment CreateStudent(Student student, Course courseInfo)
+        {
+            return new Enrollment(student, courseInfo);
+        }
     }
 }

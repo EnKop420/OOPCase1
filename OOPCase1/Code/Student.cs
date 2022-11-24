@@ -9,10 +9,13 @@ namespace OOPCase1.Code
     internal sealed class Student : Person
     {
         public int StudentId { get; set; }
+
         public Student(int studentid, string firstname, string lastname, DateOnly dateofbirth) : base(firstname, lastname, dateofbirth)
         {
             StudentId = studentid;
         }
+
+
         internal override List<string?> getAllCourses(List<Enrollment> studentCourse)
         {
             List<string?> result = new List<string?>();
@@ -56,5 +59,7 @@ namespace OOPCase1.Code
             }
             return result;
         }
+
+
     }
 }

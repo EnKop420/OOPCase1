@@ -15,7 +15,19 @@ namespace OOPCase1.Code
         {
             Department = department;
         }
-        
+
+        public static Teacher niels = new("Lærer", "Niels", "Olesen", new DateOnly(1971, 1, 23));
+        public static Teacher peter = new("Lærer", "Peter", "Lindenskov", new DateOnly(1960, 2, 28));
+        public static Teacher henrik = new("Lærer", "Henrik", "Poulsen", new DateOnly(1970, 3, 12));
+        public static Teacher jan = new("Lærer", "Jan", "Johansen", new DateOnly(1950, 4, 21));
+
+        public static Course clientsideProgrammering = new(EnumFag.Clientsideprogrammering, peter);
+        public static Course grundlæggende = new(EnumFag.Grundlæggendeprogrammering, niels);
+        public static Course studieteknik = new(EnumFag.Studieteknik, niels);
+        public static Course oop = new(EnumFag.OOP, niels);
+        public static Course databaseProgrammering = new(EnumFag.Datebaseprogrammering, niels);
+        public static Course computerTeknologi = new(EnumFag.Computerteknologi, jan);
+        public static Course netværk = new(EnumFag.Netværk, henrik);
         public string? getDepartment(Enrollment department)
         {
             return department.CourseInfo.TeacherInfo.Department;
