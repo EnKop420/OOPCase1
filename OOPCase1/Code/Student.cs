@@ -59,7 +59,5 @@ namespace OOPCase1.Code
             }
             return result;
         }
-
-
     }
 }

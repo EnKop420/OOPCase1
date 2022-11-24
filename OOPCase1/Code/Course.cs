@@ -12,20 +12,13 @@ namespace OOPCase1.Code
 
         public Teacher TeacherInfo { get; set; }
 
-        public Course()
-        {
-
-        }
-
+        public Course(){    }
         public Course(EnumFag coursename, Teacher teacherinfo)
         {
             CourseName = coursename;
             TeacherInfo = teacherinfo;
         }
-
-
-
-        public void GetAllStudents(List<Enrollment> enrollmentList)
+        public void EnrolledStudents(List<Enrollment> enrollmentList)
         {
             List<string?> students = new List<string?>();
             foreach (var item in enrollmentList)
