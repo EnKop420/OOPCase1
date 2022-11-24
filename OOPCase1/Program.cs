@@ -23,6 +23,7 @@ enrollments.nrollments = new();
 Array values = Enum.GetValues(typeof(EnumFag));
 Course fag = new();
 int id;
+DateOnly DateOfBirth;
 while (true)
 {
     try
@@ -46,7 +47,7 @@ while (true)
         Console.WriteLine("Angiv elevens fødselsdato (MM.dd.yyyy");
         try
         {
-            DateOnly DateOfBirth = DateOnly.Parse(Console.ReadLine());
+            DateOfBirth = DateOnly.Parse(Console.ReadLine());
         }
         catch (Exception)
         {
