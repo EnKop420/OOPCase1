@@ -14,6 +14,7 @@ namespace OOPCase1.Code
         public static int Age { get; set; }
 
         internal abstract List<string?> getAllCourses(Enrollment enrollments);
+        internal abstract List<string?> getAllCourses(List<Enrollment> enrollments);
         public static int ConvertToAge(DateOnly DateOfBirth)
         {
             DateTime today = DateTime.Today;
@@ -32,7 +33,7 @@ namespace OOPCase1.Code
             return Age;
         }
 
-        internal virtual string? getDateOfBirth()
+        internal virtual string? HelloThere()
         {
             return "General Kenobi";
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPCase1.Code
 {
-    internal class Enrollment
+    internal class Enrollment:IComparable<Enrollment>
     {
         public Student StudentInfo { get; set; }
         public Course CourseInfo { get; set; }
@@ -20,6 +20,10 @@ namespace OOPCase1.Code
         public Enrollment()
         {
 
+        }
+        public int CompareTo(Enrollment other)
+        {
+            return string.Compare(other.StudentInfo.LastName,StudentInfo.LastName);
         }
     }
 }

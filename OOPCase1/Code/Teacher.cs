@@ -20,16 +20,37 @@ namespace OOPCase1.Code
         {
             return department.CourseInfo.TeacherInfo.Department;
         }
+        internal override List<string?> getAllCourses(List<Enrollment> teacherCourses)
+        {
+            List<string?> result = new List<string?>();
+            foreach (var item in teacherCourses)
+            {
+                if (item.CourseInfo.TeacherInfo.FirstName == FirstName && item.CourseInfo.TeacherInfo.LastName == LastName)
+                {
+                    if (!result.Contains(item.CourseInfo.CourseName.ToString()))
+                    {
+                        result.Add(item.CourseInfo.CourseName.ToString());
+                    }
+                }
+            }
+            return result;
+        }
         internal override List<string?> getAllCourses(Enrollment teacherCourses)
         {
             List<string?> result = new List<string?>();
             foreach (var item in teacherCourses.enrollment)
             {
-                result.Add(item.CourseInfo.CourseName);
+                if (item.CourseInfo.TeacherInfo.FirstName == FirstName && item.CourseInfo.TeacherInfo.LastName == LastName)
+                {
+                    if (!result.Contains(item.CourseInfo.CourseName.ToString()))
+                    {
+                        result.Add(item.CourseInfo.CourseName.ToString());
+                    }
+                }
             }
             return result;
         }
-        internal override string? getDateOfBirth()
+        internal override string? HelloThere()
         {
             return "Hello There";
         }

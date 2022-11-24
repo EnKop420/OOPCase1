@@ -13,12 +13,46 @@ namespace OOPCase1.Code
         {
             StudentId = studentid;
         }
-        internal override List<string?> getAllCourses(Enrollment teacherCourses)
+        internal override List<string?> getAllCourses(List<Enrollment> studentCourse)
         {
             List<string?> result = new List<string?>();
-            foreach (var item in teacherCourses.enrollment)
+            bool printStudent = true;
+            foreach (var item in studentCourse)
             {
-                result.Add(item.CourseInfo.CourseName);
+                if (printStudent)
+                {
+                    result.Add(item.StudentInfo.FirstName + item.StudentInfo.LastName);
+                    printStudent = false;
+                }
+                if (item.StudentInfo.FirstName == FirstName && item.StudentInfo.LastName == LastName)
+                {
+                    if (!result.Contains(item.CourseInfo.CourseName.ToString()))
+                    {
+                        result.Add(item.CourseInfo.CourseName.ToString());
+                    }
+                }
+            }
+
+            return result;
+        }
+        internal override List<string?> getAllCourses(Enrollment studentCourse)
+        {
+            List<string?> result = new List<string?>();
+            bool printStudent = true;
+            foreach (var item in studentCourse.enrollment)
+            {
+                if (printStudent)
+                {
+                    result.Add($"{FirstName} {LastName} :\n");
+                    printStudent = false;
+                }
+                if (item.StudentInfo.FirstName == FirstName && item.StudentInfo.LastName == LastName)
+                {
+                    if (!result.Contains(item.CourseInfo.CourseName.ToString()))
+                    {
+                        result.Add(item.CourseInfo.CourseName.ToString());
+                    }
+                }
             }
             return result;
         }
