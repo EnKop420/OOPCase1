@@ -10,7 +10,7 @@ namespace OOPCase1.Code
     {
         public Student StudentInfo { get; set; }
         public Course CourseInfo { get; set; }
-        public List<Enrollment> enrollment { get; set; }
+        public List<Enrollment> nrollments { get; set; }
 
         public Enrollment(Student studentinfo, Course courseinfo)
         {
@@ -25,9 +25,11 @@ namespace OOPCase1.Code
         {
             return string.Compare(other.StudentInfo.LastName,StudentInfo.LastName);
         }
-        public Enrollment CreateStudent(Student student, Course courseInfo)
+        public void EnrollStudent(Enrollment enrollment)
         {
-            return new Enrollment(student, courseInfo);
+            nrollments.Add(enrollment);
+            nrollments.Sort();
+            nrollments.Reverse();
         }
     }
 }

@@ -50,7 +50,7 @@ namespace OOPCase1.Code
         internal override List<string?> getAllCourses(Enrollment teacherCourses)
         {
             List<string?> result = new List<string?>();
-            foreach (var item in teacherCourses.enrollment)
+            foreach (var item in teacherCourses.nrollments)
             {
                 if (item.CourseInfo.TeacherInfo.FirstName == FirstName && item.CourseInfo.TeacherInfo.LastName == LastName)
                 {

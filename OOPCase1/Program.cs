@@ -1,9 +1,10 @@
-﻿using System.Text;
+﻿using OOPCase1.Code;
+using System.Text;
 Enrollment enrollments = new();
-Student amanda = new(1, "Amanda", "Gudmand", new DateOnly(1990, 1, 1));
+//Student amanda = new(1, "Amanda", "Gudmand", new DateOnly(1990, 1, 1));
 
 
-enrollments.enrollment = new List<Enrollment>();
+//enrollments.enrollment = new List<Enrollment>();
 //{
 //new Enrollment(amanda, clientsideProgrammering),
 //new Enrollment(amanda, grundlæggende),
@@ -14,8 +15,12 @@ enrollments.enrollment = new List<Enrollment>();
 //new Enrollment(amanda, netværk),
 //};
 
-enrollments.enrollment.Sort();
-enrollments.enrollment.Reverse();
+//enrollments.enrollment.Sort();
+//enrollments.enrollment.Reverse();
+
+enrollments.nrollments = new();
+Array values = Enum.GetValues(typeof(EnumFag));
+Course fag = new();
 while (true)
 {
     try
@@ -28,31 +33,23 @@ while (true)
         string? LastName = Console.ReadLine();
         Console.WriteLine("Angiv elevens fødselsdato (MM.dd.yyyy");
         DateOnly DateOfBirth = DateOnly.Parse(Console.ReadLine());
-
-        foreach (var item in enrollments.enrollment)
+        foreach (var item in values)
         {
-            Console.WriteLine(item.CourseInfo.CourseName);
+            Console.WriteLine(item.ToString());
         }
-
         Console.WriteLine("Angiv hvilket fag du vil tilmelde eleven");
 
         string? CourseInStringValue= Console.ReadLine();
-        Course fag = new(); 
-        fag = fag.GetCourse(CourseInStringValue);
-
+        fag = fag.GetCourse(CourseInStringValue.ToLower());
             if (fag == null)
             {
                 throw new Exception("Faget fandtes ikke prøv igen...");
             }
-
-        enrollments.CreateStudent(new Student(id, FirstName, LastName, DateOfBirth), fag);
-
-
-
+        enrollments.EnrollStudent(new Enrollment(new Student(id, FirstName, LastName,DateOfBirth), fag));
         Console.Clear();
-        foreach (var item in enrollments.enrollment)
+        foreach (var item in enrollments.nrollments)
         {
-            Console.WriteLine($"{item.StudentInfo.FirstName} {item.StudentInfo.LastName}\n{item.StudentInfo.DateOfBirth}\nFag tilmeldt: {item.CourseInfo.CourseName} Lærer: {item.CourseInfo.TeacherInfo.FirstName} {item.CourseInfo.TeacherInfo.LastName}");
+            Console.WriteLine($"{item.StudentInfo.FirstName} {item.StudentInfo.LastName}\n{item.StudentInfo.DateOfBirth}\nFag tilmeldt: {item.CourseInfo.CourseName} Lærer: {item.CourseInfo.TeacherInfo.FirstName} {item.CourseInfo.TeacherInfo.LastName}\n");
         }
     }
     catch (Exception e)

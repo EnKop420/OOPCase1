@@ -42,7 +42,7 @@ namespace OOPCase1.Code
         {
             List<string?> result = new List<string?>();
             bool printStudent = true;
-            foreach (var item in studentCourse.enrollment)
+            foreach (var item in studentCourse.nrollments)
             {
                 if (printStudent)
                 {
