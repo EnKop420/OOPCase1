@@ -82,11 +82,11 @@ while (true)
         Console.WriteLine("Vil du oprette flere eller afslutte programmet?\nY/N");
         string input = Console.ReadLine().ToLower();
 
-        if (input == "y")
+        if (input == "n")
         {
             Console.Clear();
         }
-        else if (input == "n")
+        else if (input == "y")
         {
             break;
         }
